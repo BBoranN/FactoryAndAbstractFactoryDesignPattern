@@ -36,7 +36,11 @@ namespace FactoryAndAbstractFactory
             macButton.Click();
             macTextBox.Type();
 
-
+            IFactory<IVehicle> carFactory2 =new AbstractFactory<IVehicle>(() => new Car());
+            IFactory<IVehicle> motorCycleFactory2 = new AbstractFactory<IVehicle>(() => new MotorCycle());
+            
+            IVehicle car2= carFactory2.Create();
+            car2.Manufacture();
 
             Console.WriteLine("Press 'q' to exit...");
 
